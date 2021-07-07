@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js" defer></script>
+    <title>VOD Library</title>
+</head>
+<body onload="cloneDraggables(); editDraggables()">
+    <header>
+        <div id="title">Twitch VOD Library</div>
+        <button onclick="addVideo()">+</button>
+    </header>
+
+    <hr>
+
+    <main>
+        <div class="sort-wrapper">
+            <div class="sort-button" id="sort-done" onclick="toggleSortBy('done')">
+                <span class="material-icons md-24 md-inactive md-light" style="float: left;">check_circle</span>
+                <span class="material-icons md-24" style="float: right;">keyboard_arrow_up</span>
+            </div>
+            <div class="sort-button" id="sort-favorite" onclick="toggleSortBy('favorite')">
+                <span class="material-icons md-24 md-inactive md-light" style="float: left;">star</span>
+                <span class="material-icons md-24" style="float: right;">keyboard_arrow_up</span>
+            </div>
+            <div class="sort-button" id="sort-streamer" onclick="toggleSortBy('streamer')">
+                <span class="material-icons md-24 md-inactive md-light" style="float: left;">person</span>
+                <span class="material-icons md-24" style="float: right;">keyboard_arrow_up</span>
+            </div>
+            <div class="sort-button" id="sort-date" onclick="toggleSortBy('date')">
+                <span class="material-icons md-24 md-inactive md-light" style="float: left;">calendar_today</span>
+                <span class="material-icons md-24" style="float: right;">keyboard_arrow_up</span>
+            </div>
+            <div class="sort-button" id="sort-length" onclick="toggleSortBy('length')">
+                <span class="material-icons md-24 md-inactive md-light" style="float: left;">timer</span>
+                <span class="material-icons md-24" style="float: right;">keyboard_arrow_up</span>
+            </div>
+        </div>
+        <h3></h3>
+        <div class="container">
+            <div class="draggable" id="video-0">
+                <div class="button-wrapper-top">
+                    <div class="button move-up" onclick="moveVideo(this.parentNode.parentNode.className.split(' ')[0], 'top')">
+                        <span class="material-icons md-36">keyboard_arrow_up</span>
+                    </div>
+                    <div class="button move-down" onclick="moveVideo(this.parentNode.parentNode.className.split(' ')[0], 'bottom')">
+                        <span class="material-icons md-36">keyboard_arrow_down</span>
+                    </div>
+                </div>
+                <div class="text-wrapper">
+                    <div class="length" onclick="updateDuration(this.parentNode.parentNode.className.split(' ')[0])"></div>
+                    <div class="date"></div>
+                    <p class="streamer bold">Error</p>
+                    <p class="category bold">Not connected to API</p>
+                    <p class="title"></p>
+                </div>
+                <div class="button-wrapper-bottom">
+                    <div class="button open" onclick="openLink(this.parentNode.parentNode.id.split('-')[1])">
+                        <span class="material-icons md-36">open_in_new</span>
+                    </div>
+                    <div class="button done" onclick="toggleDone(this.parentNode.parentNode.className.split(' ')[0])">
+                        <span class="material-icons md-36">unpublished</span>
+                    </div>
+                    <div class="button favorite" onclick="toggleFavorite(this.parentNode.parentNode.className.split(' ')[0])">
+                        <span class="material-icons md-36">star_border</span>
+                    </div>
+                    <div class="button delete" onclick="deleteVideo(this.parentNode.parentNode.className.split(' ')[0])">
+                        <span class="material-icons md-36">delete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

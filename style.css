@@ -1,0 +1,121 @@
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial;
+}
+
+button {
+    width: 2rem;
+    float: right;
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+header {
+    font-size: 2rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+h3 {
+    color: red;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.sort-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sort-button {
+    width: 60px;
+    border: 1px solid;
+    text-align: center;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.draggable {
+    outline: 1px solid white;
+    background: linear-gradient(180deg, rgba(89,0,255,1) 0%, rgba(48,0,139,1) 100%);
+    text-align: center;
+    overflow: auto;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.button-wrapper-top {
+    display: flex;
+}
+
+.button-wrapper-top .button {
+    outline: 1px solid white;
+    width: 100%;
+}
+
+.text-wrapper {
+    border: 1px solid white;
+    position: relative;
+}
+
+.length {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    cursor: pointer;
+}
+
+.date {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.button-wrapper-bottom {
+    display: flex;
+}
+
+.button-wrapper-bottom .button {
+    outline: 1px solid white;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.button:hover {
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.delete {
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(139,0,0,1) 0%, rgba(205,0,0,1) 100%); 
+}
+
+.delete:hover {
+    background: red
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons {user-select: none;}
